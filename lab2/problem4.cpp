@@ -6,7 +6,6 @@
 // - overload > function to compare two time
 // - member function to display time in HH:MM:SS format
 
-
 #include <iostream>
 using namespace std;
 
@@ -65,6 +64,16 @@ public:
         t3.normalize();
         return t3;
     }
+    bool operator>(TIME &t2)
+    {
+        if (hours > t2.hours)
+            return true;
+        if (hours == t2.hours && min > t2.min)
+            return true;
+        if (hours == t2.hours && min == t2.min && sec > t2.sec)
+            return true;
+        return false;
+    }
     void display()
     {
         cout << hours << ":" << min << ":" << sec << "" << endl;
@@ -81,4 +90,12 @@ int main()
     t3 = t1 - t2;
     cout << "T1-T2=";
     t3.display();
+    if (t1 > t2)
+    {
+        cout << "T1 is greater than T2" << endl;
+    }
+    else
+    {
+        cout << "T1 is not greater than T2" << endl;
+    }
 }

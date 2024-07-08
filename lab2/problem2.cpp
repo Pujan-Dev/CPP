@@ -14,16 +14,16 @@ public:
         cin >> amount;
     }
 
-    float getAmount() const {
+    float getAmount()   {
         return amount;
     }
 
-    bool operator<(const NPR&) const;
-    bool operator<=(const NPR&) const;
-    bool operator==(const NPR&) const;
-    bool operator>=(const NPR&) const;
-    bool operator>(const NPR&) const;
-    bool operator!=(const NPR&) const;
+    bool operator<(  NPR&)  ;
+    bool operator<=(  NPR&)  ;
+    bool operator==(  NPR&)  ;
+    bool operator>=(  NPR&)  ;
+    bool operator>(  NPR&)  ;
+    bool operator!=(  NPR&)  ;
 };
 
 class NPR {
@@ -36,65 +36,65 @@ public:
         cin >> amount;
     }
 
-    float getAmount() const {
+    float getAmount()   {
         return amount;
     }
 
-    bool operator<(const USD&) const;
-    bool operator<=(const USD&) const;
-    bool operator==(const USD&) const;
-    bool operator>=(const USD&) const;
-    bool operator>(const USD&) const;
-    bool operator!=(const USD&) const;
+    bool operator<(  USD&)  ;
+    bool operator<=(  USD&)  ;
+    bool operator==(  USD&)  ;
+    bool operator>=(  USD&)  ;
+    bool operator>(  USD&)  ;
+    bool operator!=(  USD&)  ;
 };
 
-const float conversionRate = 101.36;
+  float conversionRate = 101.36;
 
-bool USD::operator<(const NPR& npr) const {
+bool USD::operator<(  NPR& npr)   {
     return amount < npr.getAmount() / conversionRate;
 }
 
-bool USD::operator<=(const NPR& npr) const {
+bool USD::operator<=(  NPR& npr)   {
     return amount <= npr.getAmount() / conversionRate;
 }
 
-bool USD::operator==(const NPR& npr) const {
+bool USD::operator==(  NPR& npr)   {
     return amount == npr.getAmount() / conversionRate;
 }
 
-bool USD::operator>=(const NPR& npr) const {
+bool USD::operator>=(  NPR& npr)   {
     return amount >= npr.getAmount() / conversionRate;
 }
 
-bool USD::operator>(const NPR& npr) const {
+bool USD::operator>(  NPR& npr)   {
     return amount > npr.getAmount() / conversionRate;
 }
 
-bool USD::operator!=(const NPR& npr) const {
+bool USD::operator!=(  NPR& npr)   {
     return amount != npr.getAmount() / conversionRate;
 }
 
-bool NPR::operator<(const USD& usd) const {
+bool NPR::operator<(  USD& usd)   {
     return amount < usd.getAmount() * conversionRate;
 }
 
-bool NPR::operator<=(const USD& usd) const {
+bool NPR::operator<=(  USD& usd)   {
     return amount <= usd.getAmount() * conversionRate;
 }
 
-bool NPR::operator==(const USD& usd) const {
+bool NPR::operator==(  USD& usd)   {
     return amount == usd.getAmount() * conversionRate;
 }
 
-bool NPR::operator>=(const USD& usd) const {
+bool NPR::operator>=(  USD& usd)   {
     return amount >= usd.getAmount() * conversionRate;
 }
 
-bool NPR::operator>(const USD& usd) const {
+bool NPR::operator>(  USD& usd)   {
     return amount > usd.getAmount() * conversionRate;
 }
 
-bool NPR::operator!=(const USD& usd) const {
+bool NPR::operator!=(  USD& usd)   {
     return amount != usd.getAmount() * conversionRate;
 }
 

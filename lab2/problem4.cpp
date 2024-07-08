@@ -82,7 +82,7 @@ public:
 
 int main()
 {
-    TIME t1(1, 2, 3), t2(5, 60, 60);
+    TIME t1(1, 2, 3), t2(5, 20, 00);
     TIME t3;
     t3 = t1 + t2;
     cout << "T1+T2=";

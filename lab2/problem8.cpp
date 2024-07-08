@@ -6,8 +6,7 @@ longer than 24 hours will pay $8.00 per day. Write a program that
 calculates and prints the parking charges. The inputs to your program
 are the date and time when a car enters the parking garage, and the date
 and time when the same car leaves the parking garage. Keep track of
-number of cars in the garage overloading ++ and -- operators. 
-
+number of cars in the garage overloading ++ and -- operators.
 */
 
 #include <iostream>

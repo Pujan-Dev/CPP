@@ -32,7 +32,7 @@ public:
     }
     void operator=(String& s) // s1=s2
     {
-        strcpy(text,s.text);
+        strcpy(text,s.text); //text = s.text
     }
     String operator+(String& s)
     {
@@ -40,6 +40,7 @@ public:
         strcpy(newText, text);
         strcat(newText, s.text);
         String newString(newText);
+        
         return newString;
     }
     bool operator==(String& s){
@@ -56,7 +57,7 @@ int main()
 {
     String s1("Hello");
     String s2("Hello");
-    String s3 = s1 + s2;
+    String s3 = s1 + s2; // s3(s1)
     cout << "Concatenated String: " ;
     s3.display();
 

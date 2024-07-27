@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 class Employee
@@ -11,25 +10,6 @@ private:
     static int managerCount;
     static int engineerCount;
     static int otherCount;
-
-public:
-    // Constructor
-    Employee(int number, const string &name, char desig)
-        : empNumber(number), empName(name), designation(desig)
-    {
-        categorizeEmployee();
-    }
-
-    static void displayEmployeeCounts()
-    {
-        cout << "Employee Counts by Designation:" << endl;
-        cout << "Managers: " << managerCount << endl;
-        cout << "Engineers: " << engineerCount << endl;
-        cout << "Others: " << otherCount << endl;
-        cout << "Total no of employee: "<< managerCount+engineerCount+otherCount<<endl;
-    }
-
-private:
     void categorizeEmployee()
     {
         if (designation == 'M')
@@ -45,6 +25,25 @@ private:
             otherCount++;
         }
     }
+
+public:
+    // Constructor
+    Employee() {}
+    Employee(int number, const string &name, char desig)
+        : empNumber(number), empName(name), designation(desig)
+    {
+        categorizeEmployee();
+    }
+
+    // Static function to display employee counts
+    static void displayEmployeeCounts()
+    {
+        cout << "Employee Counts by Designation:" << endl;
+        cout << "Managers: " << managerCount << endl;
+        cout << "Engineers: " << engineerCount << endl;
+        cout << "Others: " << otherCount << endl;
+        cout << "Total number of employees: " << managerCount + engineerCount + otherCount << endl;
+    }
 };
 
 int Employee::managerCount = 0;
@@ -53,10 +52,10 @@ int Employee::otherCount = 0;
 
 int main()
 {
-    vector<Employee> employees;
     int numEmployees;
     cout << "Enter the number of employees: ";
     cin >> numEmployees;
+    Employee* employees = new Employee[numEmployees];
 
     for (int i = 0; i < numEmployees; ++i)
     {
@@ -73,10 +72,11 @@ int main()
         cout << "Designation (M for Manager, E for Engineer, O for Other): ";
         cin >> designation;
 
-        employees.emplace_back(empNumber, empName, designation);
+        employees[i] = Employee(empNumber, empName, designation);
     }
 
     Employee::displayEmployeeCounts();
 
+    delete[] employees; // Free dynamically allocated memory
     return 0;
 }

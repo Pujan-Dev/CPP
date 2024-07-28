@@ -2,7 +2,8 @@
 #include <iostream>
 
 using namespace std;
-class TIME{
+class TIME
+{
 private:
     int hr, min, sec;
 
@@ -26,7 +27,8 @@ public:
     }
 };
 
-int main(){
+int main()
+{
     TIME t1;
     cout << "Enter time (hours minutes seconds): ";
     cin >> t1;

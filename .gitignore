@@ -1,1 +1,28 @@
-.vscode
+# Ignore all files
+*
+
+# Except C++ source files
+!*.cpp
+!*.h
+!*.hpp
+
+# Don't ignore .gitignore itself
+!.gitignore
+
+# Don't ignore the README file
+!README.md
+
+# Don't ignore any directories
+!*/
+
+# Ignore specific non-code files
+*.pdf
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.out
+*.log
+*.tmp

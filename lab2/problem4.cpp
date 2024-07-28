@@ -1,10 +1,4 @@
-// Create a class called 'TIME' that has
-// - three integer data members for hours, min and sec
-// - constructor to initialize the object to zero
-// - constructor to initialize the object to some constant value
-// - overload +,- to add and subtract two TIME objects
-// - overload > function to compare two time
-// - member function to display time in HH:MM:SS format
+
 
 #include <iostream>
 using namespace std;
@@ -15,25 +9,18 @@ private:
     int hours, min, sec;
     void normalize()
     {
-        if (sec >= 60)
+        // Normalize seconds
+        if (sec >= 60 || sec < 0)
         {
             min += sec / 60;
-            sec %= 60;
+            sec = (sec % 60 + 60) % 60;
         }
-        if (min >= 60)
+
+        // Normalize minutes
+        if (min >= 60 || min < 0)
         {
             hours += min / 60;
-            min %= 60;
-        }
-        if (sec < 0)
-        {
-            min -= (abs(sec) / 60) + 1;
-            sec = 60 - (abs(sec) % 60);
-        }
-        if (min < 0)
-        {
-            hours -= (abs(min) / 60) + 1;
-            min = 60 - (abs(min) % 60);
+            min = (min % 60 + 60) % 60;
         }
     }
 

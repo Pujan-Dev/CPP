@@ -2,7 +2,6 @@
 #include <cstring>
 using namespace std;
 
-// 5.class Inventory
 class Inventory
 {
 private:
@@ -14,7 +13,6 @@ private:
 public:
     Inventory(int s, int r, double u, const char *d)
     {
-        // initialize data members
         stock = s;
         restock = r;
         unitPrice = u;
@@ -24,7 +22,6 @@ public:
 
     ~Inventory()
     {
-        // release dynamically allocated memory
         delete[] itemDesc;
     }
 
@@ -45,7 +42,6 @@ class Auto : public Inventory
 public:
     Auto(int s, int r, double u, const char *d, const char *b) : Inventory(s, r, u, d)
     {
-        // initialize base and derived members
         brand = new char[strlen(b) + 1];
         strcpy(brand, b);
     }
@@ -70,7 +66,6 @@ class Transmission : public Inventory
 public:
     Transmission(int s, int r, double u, const char *d, const char *sup) : Inventory(s, r, u, d)
     {
-        // initialize base and derived members
         supplier = new char[strlen(sup) + 1];
         strcpy(supplier, sup);
     }

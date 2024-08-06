@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// 4. class Date
 class Date
 {
     int day, month, year;
@@ -28,7 +27,6 @@ public:
     {
         cout << "Date: " << year << "/" << month << "/" << day << endl;
     }
-    // Date get();
     void set()
     {
         cout << "Enter date (yyyy mm dd): ";
@@ -83,7 +81,6 @@ public:
     }
 };
 
-// class DateAndTime : public Date, public Time
 class DateAndTime : public Date, public Time
 {
 public:

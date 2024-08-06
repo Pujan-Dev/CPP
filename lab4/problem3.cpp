@@ -15,7 +15,7 @@ public:
 
     void display()
     {
-        float priceInNPR = pubPrice * 120; // Conversion rate: 1 USD = 120 NPR
+        float priceInNPR = pubPrice * 120; 
         cout << "Title: " << pubTitle << endl;
         cout << "Price: Rs." << priceInNPR << endl;
     }
@@ -40,7 +40,7 @@ public:
         cout << "Sales for the last three months: ";
         for (int i = 0; i < 3; i++)
         {
-            float salesInNPR = sales[i] * 120; // Conversion rate: 1 USD = 120 NPR
+            float salesInNPR = sales[i] * 120; 
             cout << salesInNPR << " Rs ";
         }
         cout << endl;

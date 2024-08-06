@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip> // for std::fixed and std::setprecision
+#include <iomanip> 
 
 using namespace std;
 

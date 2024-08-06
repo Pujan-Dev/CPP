@@ -1,38 +1,53 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>  
+
 using namespace std;
 
-class ConvertPtoC {
+
+class polar {
 private:
-    float r, theta;
-    float x, y;
+    double r, theta;
 
 public:
-    ConvertPtoC() : r(0), theta(0) {}
-    ConvertPtoC(float R, float THETA) : r(R), theta(THETA) {}
-
+    polar() : r(0), theta(0) {}
+    polar(double R, double THETA) : r(R), theta(THETA) {}
     void input() {
-        cout << "Enter the value of r and theta (in degrees): " << endl;
+
+        cout << "Enter the value of r and theta (in radian): " << endl;
         cin >> r >> theta;
     }
-
-    void convert() {
-        float thetaRad = theta * (M_PI / 180.0); 
-        x = r * cos(thetaRad);
-        y = r * sin(thetaRad);
+    double returntheta(){
+        return theta;
     }
+    double return_r(){
+        return r;
+    }
+};
+class cart {
+private:
+    double x, y;
 
-    void display() {
+public:
+    cart(double x1,double y1) : x(x1),y(y1){};
+        void display() {
         cout << fixed << setprecision(2); 
+
         cout << "Cartesian coordinates are: (" << x << ", " << y << ")." << endl;
+    }
+    cart (polar &c1) {
+        double thetaRad = c1.returntheta(); 
+        x = c1.return_r()* cos(thetaRad);
+        y = c1.return_r()* sin(thetaRad);
     }
 };
 
+
+
 int main() {
-    ConvertPtoC p1;
+    polar p1;
     p1.input();
-    p1.convert();
-    p1.display();
+    cart c1=p1; 
+    c1.display();
     return 0;
 }
